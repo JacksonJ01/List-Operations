@@ -44,9 +44,9 @@ time_()
 
 
 # Calls the mode function to check if the list contains a mode
-print("\nNow lettuce check if this list has a mode:")
+print("\nNow lettuce check if this list has any modes:")
 if mode() == "Yes":
-    print("Yes, this list has a mode.")
+    print("")
 else:
     print("No, this list doesn't have a mode.")
 time_()
@@ -65,7 +65,8 @@ time_()
 # If there is a mode, then this deletes it
 print("\n")
 if mode() == "Yes":
-    print("Let's remove that extra number from earlier:")
+    print("As we stated earlier."
+          "So, let's remove any extra numbers:")
     rem_dup()
 else:
     print("There are no reoccurring numbers, so nothing will be removed from the list.")

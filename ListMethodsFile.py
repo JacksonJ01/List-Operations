@@ -6,7 +6,7 @@ numbers = []
 
 
 def time_():
-    return time.sleep(.5)
+    return time.sleep(0)
 
 
 # This appends the user input to the List
@@ -42,20 +42,27 @@ def median():
 
 # This let's the user know if there is a reoccurring number
 def mode():
+    modes = "Yes"
     if numbers[0] == numbers[1] or numbers[0] == numbers[2] or numbers[0] == numbers[3] or numbers[0] == numbers[4]:
-        modes = "Yes"
-    elif numbers[1] == numbers[0] or numbers[1] == numbers[2] or numbers[1] == numbers[3] or numbers[1] == numbers[4]:
-        modes = "Yes"
-    elif numbers[2] == numbers[0] or numbers[2] == numbers[1] or numbers[2] == numbers[3] or numbers[2] == numbers[4]:
-        modes = "Yes"
+        print(numbers[0], "is a reoccurring number")
+        # modes = "Yes"
 
-    elif numbers[3] == numbers[0] or numbers[3] == numbers[1] or numbers[3] == numbers[2] or numbers[3] == numbers[4]:
-        modes = "Yes"
+    if numbers[1] == numbers[2] or numbers[1] == numbers[3] or numbers[1] == numbers[4]:
+        print(numbers[1], "is a reoccurring number")
+        # modes = "Yes"
 
-    elif numbers[4] == numbers[0] or numbers[4] == numbers[1] or numbers[4] == numbers[2] or numbers[4] == numbers[3]:
-        modes = "Yes"
+    if numbers[2] == numbers[3] or numbers[2] == numbers[4]:
+        print(numbers[2], "is a reoccurring number")
+        # modes = "Yes"
 
-    else:
+    if numbers[3] == numbers[4]:
+        print(numbers[3], "is a reoccurring number")
+        # modes = "Yes"
+
+    if numbers[0] != numbers[1] and numbers[0] != numbers[2] and numbers[0] != numbers[3] and numbers[0] != numbers[4]\
+            and numbers[1] != numbers[2] and numbers[1] != numbers[3] and numbers[1] != numbers[4]\
+            and numbers[2] != numbers[3] and numbers[2] != numbers[4]\
+            and numbers[3] != numbers[4]:
         modes = "No"
     return modes
 
@@ -73,24 +80,23 @@ def smallest():
 # This will delete any duplicate numbers
 def rem_dup():
     if numbers[0] == numbers[1] or numbers[0] == numbers[2] or numbers[0] == numbers[3] or numbers[0] == numbers[4]:
-        numbers.remove(numbers[0])
-        print(numbers)
-        numbers.insert(numbers[0], numbers[0])
-
-    elif numbers[1] == numbers[0] or numbers[1] == numbers[2] or numbers[1] == numbers[3] or numbers[1] == numbers[4]:
-        numbers.remove(numbers[1])
+        numbers[0] = None
         print(numbers)
 
-    elif numbers[2] == numbers[0] or numbers[2] == numbers[1] or numbers[2] == numbers[3] or numbers[2] == numbers[4]:
-        numbers.remove(numbers[2])
+    if numbers[1] == numbers[0] or numbers[1] == numbers[2] or numbers[1] == numbers[3] or numbers[1] == numbers[4]:
+        numbers[1] = None
         print(numbers)
 
-    elif numbers[3] == numbers[0] or numbers[3] == numbers[1] or numbers[3] == numbers[2] or numbers[3] == numbers[4]:
-        numbers.remove(numbers[3])
+    if numbers[2] == numbers[0] or numbers[2] == numbers[1] or numbers[2] == numbers[3] or numbers[2] == numbers[4]:
+        numbers[2] = None
         print(numbers)
 
-    elif numbers[4] == numbers[0] or numbers[4] == numbers[1] or numbers[4] == numbers[2] or numbers[4] == numbers[3]:
-        numbers.remove(numbers[4])
+    if numbers[3] == numbers[0] or numbers[3] == numbers[1] or numbers[3] == numbers[2] or numbers[3] == numbers[4]:
+        numbers[3] = None
+        print(numbers)
+
+    if numbers[4] == numbers[0] or numbers[4] == numbers[1] or numbers[4] == numbers[2] or numbers[4] == numbers[3]:
+        numbers[4] = None
         print(numbers)
     return
 
@@ -98,26 +104,31 @@ def rem_dup():
 # Will only show odd numbers
 def only_odd():
     for number in numbers:
-        if number % 2 != 0:
-            print(number)
+        if number is not None:
+            if number % 2 != 0:
+                print(number)
     return
 
 
 # Will only show even numbers
 def only_even():
     for number in numbers:
-        if number % 2 == 0:
-            print(number)
+        if number is not None:
+            if number % 2 == 0:
+                print(number)
     return
 
 
 # Will allow the user to type a number and check if it is included in the List
 def included():
     same = int(input(">>>"))
-    if same == numbers[0] or same == numbers[1] or same == numbers[2] or same == numbers[3] or same == numbers[4]:
-        print("That number is included in the list")
-    elif same != numbers[0] or same != numbers[1] or same != numbers[2] or same != numbers[3] or same != numbers[4]:
-        print("I don't see that number in the list")
+    while same != numbers[0] or same != numbers[1] or same != numbers[2] or same != numbers[3] or same != numbers[4]:
+        print("That number is not included in the list"
+              "\nTry Again")
+        same = int(input(">>>"))
+        if same == numbers[0] or same == numbers[1] or same == numbers[2] or same == numbers[3] or same == numbers[4]:
+            print("I see that number in the list")
+            break
     return
 
 
