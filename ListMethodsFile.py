@@ -6,7 +6,7 @@ numbers = []
 
 
 def time_():
-    return time.sleep(0)
+    return time.sleep(2)
 
 
 # This appends the user input to the List
@@ -120,6 +120,7 @@ def only_even():
 
 
 # Will allow the user to type a number and check if it is included in the List
+# I was showing Markhus how to do this and i thought it was a good idea
 def included():
     same = int(input(">>>"))
     while same != numbers[0] or same != numbers[1] or same != numbers[2] or same != numbers[3] or same != numbers[4]:
@@ -127,7 +128,7 @@ def included():
               "\nTry Again")
         same = int(input(">>>"))
         if same == numbers[0] or same == numbers[1] or same == numbers[2] or same == numbers[3] or same == numbers[4]:
-            print("I see that number in the list")
+            print("Hey, I see that number in the list")
             break
     return
 
