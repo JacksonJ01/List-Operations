@@ -65,9 +65,8 @@ time_()
 # If there is a mode, then this deletes it
 print("\n")
 if mode() == "Yes":
-    print("As we stated earlier."
-          "So, let's remove any extra numbers:")
-    rem_dup()
+    print("*As we stated earlier*."
+          "\nSo, let's remove any extra numbers:")
 else:
     print("There are no reoccurring numbers, so nothing will be removed from the list.")
 time_()
